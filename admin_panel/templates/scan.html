@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
+
+{% block title %}
+Scanners
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 style="clear:both">Scans</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                <tr>
+                    <td><h2>{{ form.vetbiz_title }}</h2></td>
+                </tr>
+                <tr>
+                    <td> URL: </td>
+                    <td> {{ form.vetbiz_url }} </td>
+                </tr>
+                <tr>
+                    <td> New data: </td>
+                    <td> {{ form.vetbiz_new_data }} </td>
+                </tr>
+                <tr>
+                    <td> Total count: </td>
+                    <td> {{ form.vetbiz_data_count }} </td>
+                </tr>
+                <tr>
+                    <td> Last scan: </td>
+                    <td> {{ form.vetbiz_last_scan }} </td>
+                </tr>
+                <tr>
+                    <td> Invoked by: </td>
+                    <td> {{ form.vetbiz_invoked_by }} </td>
+                </tr>
+                <tr class="submit">
+                    <td>{{ form.vetbiz_scan }}</td>
+                </tr>
+                <tr>
+                    <td> <span style="margin-left:12em"></span> </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><h2>{{ form.buyvet_title }}</h2></td>
+                </tr>
+                <tr>
+                    <td> URL: </td>
+                    <td> {{ form.buyvet_url }} </td>
+                </tr>
+                <tr>
+                    <td> New data: </td>
+                    <td> {{ form.buyvet_new_data }} </td>
+                </tr>
+                <tr>
+                    <td> Total count: </td>
+                    <td> {{ form.buyvet_data_count }} </td>
+                </tr>
+                <tr>
+                    <td> Last scan: </td>
+                    <td> {{ form.buyvet_last_scan }} </td>
+                </tr>
+                <tr>
+                    <td> Invoked by: </td>
+                    <td> {{ form.buyvet_invoked_by }} </td>
+                </tr>
+                <tr class="submit">
+                    <td> {{ form.buyvet_scan }} </td>
+                </tr>
+                <tr>
+                    <td> <span style="margin-left:12em"></span> </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

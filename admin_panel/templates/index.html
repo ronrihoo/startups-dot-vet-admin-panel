@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Panel
+{% endblock %}
+
+{% block content %}
+    <article>
+        <header>
+            <h1>Admin Panel</h1>
+        </header>
+        <section>
+            <h2>Recent Scans</h2>
+            {% if recent_scans %}
+                <ul>
+                    {% for scan in recent_scans %}
+                        <li>
+                            <tr> {{ scan.user.username }} scanned <a href="{{ scan.url }}">{{ scan.name }}</a> </tr><br>
+                            <tr> {{ scan.diff }} changes identified </tr><br>
+                            <tr> {{ scan.datetime }} </tr><br>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                No scans have been recorded yet.
+            {% endif %}
+        </section>
+    </article>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
