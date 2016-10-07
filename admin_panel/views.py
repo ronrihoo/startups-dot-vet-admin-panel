@@ -4,11 +4,11 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user, current_user
 
 from admin_panel import app, db, login_manager
+from admin_panel.scanners.vetbiz import vetbiz_scraper
 from forms import LoginForm, ScanForm, CreateUserForm
 from models import User, Scan
-
 from scanners import pathmaker
-from scanners.vetbiz import vetbiz_scraper, vetbiz_converter
+from scanners.vetbiz import vetbiz_converter
 
 
 # Pages

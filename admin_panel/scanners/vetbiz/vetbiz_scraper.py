@@ -6,10 +6,10 @@
 #
 
 import time
-import requests
-# import urllib.request     # for Python 3
 
-from scanners import pathmaker
+import requests
+
+from admin_panel.scanners import pathmaker
 
 
 def modify_url(index=0):
@@ -53,8 +53,8 @@ def download_files(links, filenames):
 
 
 def run():
-    pathmaker.make_path('scanners/vetbiz/excel_files')
+    pathmaker.make_path('admin_panel/scanners/vetbiz/excel_files')
     links = get_urls(91)
     filenames = generate_filenames(len(links))
-    #download_files(links, filenames)
+    download_files(links, filenames)
     print("All downloads completed.")

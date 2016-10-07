@@ -6,9 +6,10 @@
 #
 
 import xlrd
-from scanners import pathmaker
-from scanners import csvmaker
-from scanners.vetbiz.vetbiz_scraper import generate_filenames
+from admin_panel.scanners import csvmaker
+from admin_panel.scanners import pathmaker
+
+from admin_panel.scanners.vetbiz.vetbiz_scraper import generate_filenames
 
 
 def open_xls(path):
@@ -30,8 +31,8 @@ def get_all_rows(data, sheet):
     return data
 
 
-def run(file_quantity, xls_path='scanners/vetbiz/excel_files/',
-        csv_path='scanners/csv_files', csv_filename='vetbiz_data'):
+def run(file_quantity, xls_path='admin_panel/scanners/vetbiz/excel_files/',
+        csv_path='admin_panel/scanners/csv_files', csv_filename='vetbiz_data'):
     data = []
     print('Converting XLS files to CSV...')
     # open first .xls file
